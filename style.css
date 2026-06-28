@@ -334,13 +334,34 @@ h1, h2, h3 {
 }
 
 .envelope-wrapper.open .letter {
-    transform: translateY(-380px) scale(1.1);
-    height: 650px;
-    z-index: 5;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    height: 95vh;
+    z-index: 1000;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
     transition: all 0.9s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     overflow: auto;
     padding: 60px 40px;
+    border-radius: 20px;
+    cursor: default;
+}
+
+.envelope-wrapper.open .letter::before {
+    content: "✖";
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.envelope-wrapper.open .letter::before:hover {
+    color: var(--accent-rose);
 }
 
 .envelope-wrapper.open .letter-content {
@@ -540,11 +561,6 @@ footer {
         bottom: 10px;
         left: 10px;
         padding: 20px 15px;
-    }
-    .envelope-wrapper.open .letter {
-        transform: translateY(-180px) scale(1.05);
-        height: 440px;
-        padding: 30px 15px;
     }
     .letter-content { font-size: 1rem; }
     
