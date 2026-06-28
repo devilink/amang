@@ -600,28 +600,50 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .overflow-overlay.active {
     pointer-events: auto;
 }
 
-.overflow-circle {
+/* Rising water filling the screen from the bottom */
+.screen-flood {
     position: absolute;
-    /* Centered at the bottom initially, where the flask is */
-    top: 80%; 
-    left: 50%;
-    width: 20px;
-    height: 20px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0vh; /* Starts at 0 */
     background: linear-gradient(to top, #ff4d85, #ffb6c1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 1.5s cubic-bezier(0.6, 0.05, 0.01, 0.99);
+    transition: height 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2000;
 }
 
-.overflow-overlay.active .overflow-circle {
-    transform: translate(-50%, -50%) scale(350); /* Massive scale */
+.overflow-overlay.active .screen-flood {
+    height: 100vh; /* Fills entire screen */
+}
+
+/* Water surface wave effect (optional, makes it look like fluid) */
+.screen-flood::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C52.16,93.4,103.49,79.16,155,67.89,209.68,55.93,267.12,65.3,321.39,56.44Z" fill="%23ffb6c1"></path></svg>') repeat-x;
+    background-size: 1000px 40px;
+    animation: wave 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.overflow-overlay.active .screen-flood::before {
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1000px; }
 }
 
 .overflow-content {
@@ -630,7 +652,7 @@ footer {
     text-align: center;
     padding: 2rem;
     opacity: 0;
-    transition: opacity 1.5s 1s ease; /* Wait 1s for circle to expand */
+    transition: opacity 1.5s 2s ease; /* Wait 2s for screen flood to finish */
 }
 
 .overflow-overlay.active .overflow-content {
