@@ -56,13 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const cellCount = cells.length; // 9
     const theta = 360 / cellCount; // 40 deg
     
-    // Calculate Radius based on screen size
-    let radius = 400; // For desktop (cell width 280px)
-    
-    // Adjust radius for mobile (cell width 220px)
-    if (window.innerWidth <= 768) {
-        radius = 320; 
+    // Calculate Radius dynamically based on cell width
+    let cellWidth = 280; // Desktop default
+    if (window.innerWidth <= 360) {
+        cellWidth = 180;
+    } else if (window.innerWidth <= 768) {
+        cellWidth = 200;
     }
+    
+    // radius = (cellWidth / 2) / Math.tan(Math.PI / cellCount);
+    // Added 15% extra padding so the images don't touch
+    const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.15;
 
     // Position cells
     cells.forEach((cell, index) => {
