@@ -21,7 +21,6 @@
 
 /* ===== Animated Breathing Background ===== */
 body {
-    /* A soft, beautifully animated gradient background */
     background: linear-gradient(-45deg, #fff0f5, #ffe4e1, #ffebf0, #fcf4f5);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -29,7 +28,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
-    font-size: clamp(16px, 1.2vw, 20px); /* Perfectly scales font sizes */
+    font-size: clamp(18px, 1.5vw, 24px); /* Increased overall scale */
 }
 
 @keyframes gradientBG {
@@ -38,7 +37,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Transparent Background Utility (since body is animated) */
 .bg-soft-pink, .bg-light {
     background-color: transparent; 
 }
@@ -50,17 +48,16 @@ h1, h2, h3 {
 }
 
 .title {
-    /* Using Dancing Script for Sikhamoni's name makes it stunning */
     font-family: var(--font-handwriting);
-    font-size: clamp(5rem, 12vw, 12rem);
+    font-size: clamp(6rem, 14vw, 15rem); /* Massive hero text */
     color: var(--accent-rose);
     margin-bottom: 0rem;
     line-height: 1.1;
-    text-shadow: 2px 4px 15px rgba(199, 86, 120, 0.2);
+    text-shadow: 2px 4px 20px rgba(199, 86, 120, 0.25);
 }
 
 .subtitle {
-    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    font-size: clamp(1.6rem, 4vw, 3rem);
     color: var(--text-muted);
     font-style: italic;
     font-weight: 300;
@@ -68,14 +65,14 @@ h1, h2, h3 {
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 7vw, 5.5rem); /* Larger section titles */
     color: var(--accent-rose);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-weight: 700;
 }
 
 .anniversary-text {
-    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
     color: var(--text-main);
     margin-top: 1rem;
     font-weight: 300;
@@ -101,11 +98,11 @@ h1, h2, h3 {
 }
 
 .padding-large {
-    padding: 10rem 2rem; /* More breathing room */
+    padding: 12rem 2rem; 
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px; /* Increased max width */
     margin: 0 auto;
     width: 100%;
 }
@@ -115,7 +112,7 @@ h1, h2, h3 {
 }
 
 .mb-large {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 /* ===== Hero Section ===== */
@@ -141,16 +138,16 @@ h1, h2, h3 {
 }
 
 .scroll-indicator span {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     margin-bottom: 15px;
     color: var(--text-muted);
 }
 
 .arrow-down {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     border-right: 2px solid var(--text-muted);
     border-bottom: 2px solid var(--text-muted);
     transform: rotate(45deg);
@@ -162,18 +159,18 @@ h1, h2, h3 {
     60% { transform: translateY(-7px) translateX(-50%); }
 }
 
-/* ===== Assamese Glass Card ===== */
+/* ===== Assamese Glass Card (Enlarged) ===== */
 .glass-card {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 30px;
-    padding: 5rem 4rem;
+    padding: 6rem 5rem;
     box-shadow: 
         0 20px 50px rgba(199, 86, 120, 0.1),
-        inset 0 0 20px rgba(255, 255, 255, 0.5); /* Glowing inner shadow */
-    max-width: 900px;
+        inset 0 0 20px rgba(255, 255, 255, 0.5);
+    max-width: 1000px;
     margin: 0 auto;
     transition: transform 0.5s ease;
 }
@@ -183,28 +180,28 @@ h1, h2, h3 {
 }
 
 .assamese-text p {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    line-height: 1.9;
-    margin-bottom: 1.8rem;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    line-height: 2;
+    margin-bottom: 2.2rem;
     color: var(--text-main);
     text-align: justify;
 }
 
 .assamese-text .signature {
     font-family: var(--font-handwriting);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--accent-rose);
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
-/* ===== Interactive Envelope ===== */
+/* ===== Interactive Envelope (Massively Enlarged for PC) ===== */
 .envelope-wrapper {
     position: relative;
-    width: 440px;
-    height: 300px;
-    margin: 60px auto 180px;
+    width: 600px;
+    height: 400px;
+    margin: 80px auto 220px;
     cursor: pointer;
-    perspective: 1500px;
+    perspective: 2000px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -217,7 +214,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     background-color: #d18ba1;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 20px 50px rgba(199, 86, 120, 0.25);
 }
 
@@ -227,9 +224,9 @@ h1, h2, h3 {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 150px 220px;
+    border-width: 200px 300px;
     border-color: transparent #eeb3c8 #e3a2b9 #eeb3c8;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 12px 12px;
     z-index: 3;
     pointer-events: none;
 }
@@ -241,7 +238,7 @@ h1, h2, h3 {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 170px 220px 0 220px;
+    border-width: 230px 300px 0 300px;
     border-color: #cb7892 transparent transparent transparent;
     transform-origin: top;
     transition: transform 0.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -251,11 +248,11 @@ h1, h2, h3 {
 /* Heart Seal */
 .envelope-seal {
     position: absolute;
-    top: 150px;
+    top: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     background: #c75678;
     border-radius: 50%;
     z-index: 5;
@@ -263,16 +260,15 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 2px 5px rgba(255,255,255,0.4);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none; /* Let clicks pass through to envelope */
+    pointer-events: none; 
 }
 
-/* Pulsing Seal Animation */
 @keyframes pulseHeart {
     0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
+    50% { transform: translate(-50%, -50%) scale(1.15); }
     100% { transform: translate(-50%, -50%) scale(1); }
 }
 .envelope-wrapper:not(.open) .envelope-seal {
@@ -281,16 +277,16 @@ h1, h2, h3 {
 
 .letter {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
-    width: 410px;
-    height: 270px;
-    background-color: #fffafb; /* very soft warm white */
-    border-radius: 6px;
+    bottom: 20px;
+    left: 20px;
+    width: 560px;
+    height: 360px;
+    background-color: #fffafb; 
+    border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     z-index: 2;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 30px 20px;
+    padding: 40px 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,26 +297,26 @@ h1, h2, h3 {
     transition: opacity 0.5s;
     text-align: center;
     color: var(--text-main);
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-size: clamp(1.2rem, 1.8vw, 1.4rem);
 }
 
 .letter-content h3 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: var(--accent-rose);
     font-family: var(--font-handwriting);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 .letter-content p {
-    margin-bottom: 12px;
-    line-height: 1.7;
+    margin-bottom: 15px;
+    line-height: 1.8;
 }
 
 .letter-content .signature {
     font-family: var(--font-handwriting);
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: var(--accent-rose);
-    margin-top: 25px;
+    margin-top: 30px;
     line-height: 1.2;
 }
 
@@ -338,13 +334,13 @@ h1, h2, h3 {
 }
 
 .envelope-wrapper.open .letter {
-    transform: translateY(-280px) scale(1.2);
-    height: 520px;
+    transform: translateY(-380px) scale(1.1);
+    height: 650px;
     z-index: 5;
     box-shadow: 0 30px 60px rgba(0,0,0,0.15);
     transition: all 0.9s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     overflow: auto;
-    padding: 40px 30px;
+    padding: 60px 40px;
 }
 
 .envelope-wrapper.open .letter-content {
@@ -354,7 +350,7 @@ h1, h2, h3 {
 
 /* Custom Scrollbar */
 .letter::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 .letter::-webkit-scrollbar-track {
     background: transparent;
@@ -364,12 +360,12 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
-/* ===== 3D Gallery ===== */
+/* ===== 3D Gallery (Massively Enlarged for PC) ===== */
 .scene {
-    width: 280px;
-    height: 380px;
-    margin: 60px auto 140px;
-    perspective: 1200px;
+    width: 400px;
+    height: 550px;
+    margin: 80px auto 180px;
+    perspective: 1500px;
 }
 
 .carousel {
@@ -382,23 +378,22 @@ h1, h2, h3 {
 
 .carousel__cell {
     position: absolute;
-    width: 280px;
-    height: 380px;
+    width: 400px;
+    height: 550px;
     left: 0;
     top: 0;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     background-color: #fff;
-    padding: 10px;
-    /* Transformation is set by JS */
+    padding: 12px;
 }
 
 .carousel__cell img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     filter: brightness(0.95);
     transition: filter 0.3s;
 }
@@ -410,22 +405,23 @@ h1, h2, h3 {
 .carousel-controls {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .btn {
     background-color: var(--accent-rose);
     color: white;
     border: none;
-    padding: 14px 40px;
-    border-radius: 40px;
-    font-size: 1.1rem;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-size: 1.3rem;
     font-family: var(--font-body);
     font-weight: 500;
     cursor: pointer;
     transition: var(--transition);
     box-shadow: 0 8px 20px rgba(199, 86, 120, 0.3);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .btn:hover {
@@ -436,19 +432,19 @@ h1, h2, h3 {
 
 /* ===== Footer ===== */
 footer {
-    padding: 8rem 2rem 6rem;
+    padding: 10rem 2rem 8rem;
     position: relative;
 }
 
 .counter {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(3rem, 6vw, 4.5rem);
     font-family: var(--font-handwriting);
     color: var(--accent-rose);
     margin-bottom: 1rem;
 }
 
 #days {
-    font-size: clamp(4rem, 8vw, 6rem);
+    font-size: clamp(5rem, 10vw, 8rem);
     color: var(--text-main);
     font-weight: 700;
     font-family: var(--font-body);
@@ -456,7 +452,7 @@ footer {
 
 .footer-note {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     letter-spacing: 2px;
     opacity: 0.8;
     text-transform: uppercase;
@@ -497,86 +493,85 @@ footer {
     0% { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
     10% { opacity: 0.8; }
     90% { opacity: 0.8; }
-    100% { transform: translateY(-20vh) scale(2.5) rotate(360deg); opacity: 0; }
+    100% { transform: translateY(-20vh) scale(3) rotate(360deg); opacity: 0; }
 }
 
-/* ===== Meticulous Mobile Optimization ===== */
+/* ===== Mobile Optimization Rules ===== */
+@media (max-width: 1024px) {
+    .envelope-wrapper {
+        width: 500px;
+        height: 333px;
+    }
+    .envelope-front { border-width: 166px 250px; }
+    .envelope-flap { border-width: 190px 250px 0 250px; }
+    .envelope-seal { top: 166px; }
+    .letter { width: 460px; height: 293px; }
+    
+    .scene { width: 320px; height: 440px; }
+    .carousel__cell { width: 320px; height: 440px; }
+}
+
 @media (max-width: 768px) {
     .glass-card {
-        padding: 3.5rem 1.5rem;
+        padding: 4rem 2rem;
         border-radius: 20px;
     }
+    .assamese-text p {
+        font-size: 1.15rem;
+        text-align: left;
+    }
     
-    /* Perfect Envelope Constraints for small screens */
     .envelope-wrapper {
-        width: 300px;
-        height: 200px;
+        width: 320px;
+        height: 220px;
         margin: 40px auto 140px;
     }
-    .envelope-front {
-        border-width: 100px 150px;
-    }
-    .envelope-flap {
-        border-width: 120px 150px 0 150px;
-    }
+    .envelope-front { border-width: 110px 160px; }
+    .envelope-flap { border-width: 130px 160px 0 160px; }
     .envelope-seal {
-        top: 135px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+        top: 110px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
     }
     .letter {
-        width: 280px;
-        height: 180px;
+        width: 300px;
+        height: 200px;
         bottom: 10px;
         left: 10px;
         padding: 20px 15px;
     }
-    
     .envelope-wrapper.open .letter {
-        transform: translateY(-170px) scale(1.05);
-        height: 420px;
+        transform: translateY(-180px) scale(1.05);
+        height: 440px;
         padding: 30px 15px;
     }
+    .letter-content { font-size: 1rem; }
     
-    /* 3D Gallery Mobile Fixes */
-    /* Ensure the 3D scene fits inside phone widths */
     .scene {
-        width: 200px;
-        height: 280px;
+        width: 220px;
+        height: 300px;
         margin: 40px auto 100px;
     }
     .carousel__cell {
-        width: 200px;
-        height: 280px;
+        width: 220px;
+        height: 300px;
+    }
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
     }
 }
 
-/* Extremely narrow phones (e.g. older iPhones) */
 @media (max-width: 360px) {
     .envelope-wrapper {
         width: 280px;
         height: 190px;
     }
-    .envelope-front {
-        border-width: 95px 140px;
-    }
-    .envelope-flap {
-        border-width: 110px 140px 0 140px;
-    }
-    .envelope-seal {
-        top: 125px;
-    }
-    .letter {
-        width: 260px;
-        height: 170px;
-    }
-    .scene {
-        width: 180px;
-        height: 250px;
-    }
-    .carousel__cell {
-        width: 180px;
-        height: 250px;
-    }
+    .envelope-front { border-width: 95px 140px; }
+    .envelope-flap { border-width: 110px 140px 0 140px; }
+    .envelope-seal { top: 95px; }
+    .letter { width: 260px; height: 170px; }
+    .scene { width: 180px; height: 250px; }
+    .carousel__cell { width: 180px; height: 250px; }
 }

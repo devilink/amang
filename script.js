@@ -57,11 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const theta = 360 / cellCount; // 40 deg
     
     // Calculate Radius dynamically based on cell width
-    let cellWidth = 280; // Desktop default
+    let cellWidth = 400; // Desktop default
     if (window.innerWidth <= 360) {
         cellWidth = 180;
     } else if (window.innerWidth <= 768) {
-        cellWidth = 200;
+        cellWidth = 220;
+    } else if (window.innerWidth <= 1024) {
+        cellWidth = 320;
     }
     
     // radius = (cellWidth / 2) / Math.tan(Math.PI / cellCount);
