@@ -20,27 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Floating Hearts Background ---
     const heartsContainer = document.getElementById('hearts-container');
-    const heartSymbols = ['❤️', '💖', '✨', '🌸'];
+    const heartSymbols = ['❤️', '💖', '✨', '🌸', '💝'];
 
     const createHeart = () => {
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
         
-        const size = Math.random() * 1.5 + 0.5; // 0.5rem to 2rem
+        const size = Math.random() * 2 + 0.8; // larger hearts now
         heart.style.fontSize = `${size}rem`;
         heart.style.left = `${Math.random() * 100}vw`;
-        heart.style.animationDuration = `${Math.random() * 10 + 10}s`; // 10s to 20s
+        heart.style.animationDuration = `${Math.random() * 10 + 12}s`; 
         
         heartsContainer.appendChild(heart);
         
         setTimeout(() => {
             heart.remove();
-        }, 20000);
+        }, 22000);
     };
 
-    setInterval(createHeart, 800);
-    for (let i = 0; i < 15; i++) {
+    setInterval(createHeart, 600); // more frequent hearts for the larger screen
+    for (let i = 0; i < 20; i++) {
         setTimeout(createHeart, Math.random() * 2000);
     }
 
@@ -50,18 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
         envelope.classList.toggle('open');
     });
 
-    // --- 3D Carousel ---
+    // --- 3D Carousel (9 Images) ---
     const carousel = document.getElementById('carousel');
     const cells = carousel.querySelectorAll('.carousel__cell');
-    const cellCount = cells.length; // 8
-    const theta = 360 / cellCount; // 45 deg
-    // radius = (cellWidth / 2) / tan(PI / cellCount)
-    // For cell width 210px in desktop: (105) / tan(PI/8) ≈ 253.4px. We'll use 280px for a bit of gap.
-    let radius = 280;
+    const cellCount = cells.length; // 9
+    const theta = 360 / cellCount; // 40 deg
     
-    // Adjust radius for mobile
+    // Calculate Radius based on screen size
+    let radius = 400; // For desktop (cell width 280px)
+    
+    // Adjust radius for mobile (cell width 220px)
     if (window.innerWidth <= 768) {
-        radius = 210; // cell width is 160px. (80) / tan(PI/8) ≈ 193px.
+        radius = 320; 
     }
 
     // Position cells
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoRotate = setInterval(() => {
         currentAngle -= theta;
         rotateCarousel();
-    }, 4000);
+    }, 3500);
 
     // Pause on hover/interaction
     const scene = document.querySelector('.scene');
@@ -106,14 +106,46 @@ document.addEventListener('DOMContentLoaded', () => {
         autoRotate = setInterval(() => {
             currentAngle -= theta;
             rotateCarousel();
-        }, 4000);
+        }, 3500);
     });
+    
+    // Support touch swipe for carousel
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    scene.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoRotate);
+    }, {passive: true});
+    
+    scene.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        
+        autoRotate = setInterval(() => {
+            currentAngle -= theta;
+            rotateCarousel();
+        }, 3500);
+    }, {passive: true});
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 30) {
+            // Swiped left
+            currentAngle -= theta;
+            rotateCarousel();
+        }
+        if (touchEndX > touchStartX + 30) {
+            // Swiped right
+            currentAngle += theta;
+            rotateCarousel();
+        }
+    }
 
     // --- Dynamic Days Counter ---
     const daysElement = document.getElementById('days');
     let currentDay = 0;
     const targetDay = 1096;
-    const duration = 2000;
+    const duration = 2500;
     const interval = 20;
     const step = targetDay / (duration / interval);
 
