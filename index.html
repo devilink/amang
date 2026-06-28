@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 3rd Anniversary, Sikhamoni ❤️</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="fullscreen flex-center">
+        <div class="hero-content reveal">
+            <h2 class="subtitle">To my beautiful girlfriend,</h2>
+            <h1 class="title">Sikhamoni</h1>
+            <p class="anniversary-text">Happy 3rd Anniversary ❤️</p>
+            <div class="scroll-indicator">
+                <span>Scroll down</span>
+                <div class="arrow-down"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section (Interactive Envelope) -->
+    <section id="message" class="fullscreen flex-center bg-soft-pink">
+        <div class="container reveal flex-center flex-column">
+            <h2 class="section-title text-center mb-large">A Letter For You</h2>
+            <p class="subtitle text-center" style="margin-bottom: 2rem;">(Click to open)</p>
+            
+            <div class="envelope-wrapper" id="envelope">
+                <div class="envelope-back"></div>
+                <div class="letter">
+                    <div class="letter-content">
+                        <h3>My dearest Sikhamoni,</h3>
+                        <p>
+                            These past 3 years with you have been the most beautiful chapters of my life. 
+                            From our endless laughs to the quiet moments we share, you make every single day brighter. 
+                            You are my best friend, my confidante, and my greatest love.
+                        </p>
+                        <p>
+                            Here is to 3 years of us, and to a lifetime more of building beautiful memories together.
+                        </p>
+                        <p class="signature">Forever yours,<br>Aman</p>
+                    </div>
+                </div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-front"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Gallery Section -->
+    <section id="gallery" class="fullscreen flex-center bg-light">
+        <div class="container reveal">
+            <h2 class="section-title text-center">Our Memories</h2>
+            <p class="subtitle text-center mb-large">Spin the carousel</p>
+            
+            <div class="scene">
+                <div class="carousel" id="carousel">
+                    <!-- 8 Images total -->
+                    <div class="carousel__cell"><img src="assets/69D86652-9D55-4792-A89A-2A3DB721F44F.jpg.jpeg" alt="Memory 1"></div>
+                    <div class="carousel__cell"><img src="assets/ADB9173D-0D35-4EC3-93CE-59F476122D08.jpg.jpeg" alt="Memory 2"></div>
+                    <div class="carousel__cell"><img src="assets/HDYV8476.JPG.jpeg" alt="Memory 3"></div>
+                    <div class="carousel__cell"><img src="assets/KKHN7130.JPG.jpeg" alt="Memory 4"></div>
+                    <div class="carousel__cell"><img src="assets/IMG_9595.PNG" alt="Memory 5"></div>
+                    <div class="carousel__cell"><img src="assets/IMG_5358.png" alt="Memory 6"></div>
+                    <div class="carousel__cell"><img src="assets/IMG_5360.png" alt="Memory 7"></div>
+                    <div class="carousel__cell"><img src="assets/IMG_E5351.png" alt="Memory 8"></div>
+                </div>
+            </div>
+            
+            <div class="carousel-controls text-center" style="margin-top: 3rem;">
+                <button class="btn" id="prev-btn">Previous</button>
+                <button class="btn" id="next-btn">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="flex-center flex-column bg-soft-pink">
+        <div class="counter reveal">
+            <span id="days">1,095</span> Days of Love
+        </div>
+        <p class="footer-note">Crafted with love for Sikhamoni ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
