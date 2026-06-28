@@ -175,4 +175,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateCounter);
     
+    // --- Chemistry Love Scale ---
+    const checkLoveBtn = document.getElementById('check-love-btn');
+    const loveFluid = document.getElementById('love-fluid');
+    const overflowOverlay = document.getElementById('overflow-overlay');
+    const returnBtn = document.getElementById('return-btn');
+
+    if (checkLoveBtn) {
+        checkLoveBtn.addEventListener('click', () => {
+            // Disable button
+            checkLoveBtn.innerText = "Measuring...";
+            checkLoveBtn.style.opacity = "0.7";
+            checkLoveBtn.style.pointerEvents = "none";
+            
+            // Start fill animation
+            loveFluid.classList.add('fill');
+            
+            // Wait for 4 seconds (the CSS transition is 4s)
+            setTimeout(() => {
+                overflowOverlay.classList.add('active');
+            }, 3800); // Trigger slightly before full for smooth transition
+        });
+    }
+
+    if (returnBtn) {
+        returnBtn.addEventListener('click', () => {
+            overflowOverlay.classList.remove('active');
+            
+            // Reset fluid and button after overlay fades
+            setTimeout(() => {
+                loveFluid.classList.remove('fill');
+                checkLoveBtn.innerText = "Check My Love";
+                checkLoveBtn.style.opacity = "1";
+                checkLoveBtn.style.pointerEvents = "auto";
+            }, 1500); 
+        });
+    }
+    
 });

@@ -98,6 +98,45 @@
         </div>
     </section>
 
+    <!-- Love Scale Section -->
+    <section id="love-scale" class="fullscreen flex-center flex-column bg-light">
+        <div class="container reveal text-center">
+            <h2 class="section-title">The Love Scale</h2>
+            <p class="subtitle mb-large">Measure my love for you...</p>
+            
+            <div class="flask-container">
+                <div class="flask">
+                    <!-- The fluid that rises -->
+                    <div class="fluid-mask">
+                        <div class="fluid" id="love-fluid">
+                            <div class="bubble bubble-1"></div>
+                            <div class="bubble bubble-2"></div>
+                            <div class="bubble bubble-3"></div>
+                            <div class="bubble bubble-4"></div>
+                        </div>
+                    </div>
+                    <!-- The SVG serves as a visual glass overlay on top of the fluid -->
+                    <svg viewBox="0 0 100 160" class="flask-glass" preserveAspectRatio="none">
+                        <path d="M 35 10 L 65 10 L 65 70 L 95 140 C 100 155 85 160 50 160 C 15 160 0 155 5 140 L 35 70 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255, 255, 255, 0.9)" stroke-width="3"/>
+                        <!-- Flask Rim -->
+                        <path d="M 30 10 L 70 10 L 70 15 L 30 15 Z" fill="rgba(255, 255, 255, 0.9)"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <button class="btn" id="check-love-btn" style="margin-top: 50px;">Check My Love</button>
+        </div>
+    </section>
+
+    <!-- Overflow Overlay (Hidden Initially) -->
+    <div id="overflow-overlay" class="overflow-overlay">
+        <div class="overflow-circle" id="overflow-circle"></div>
+        <div class="overflow-content" id="overflow-content">
+            <p class="overflow-text">My love is so much that it breaks the scale of universal love and still continues to increase. ❤️</p>
+            <button class="btn return-btn" id="return-btn">Return</button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="flex-center flex-column bg-light">
         <div class="counter reveal">
